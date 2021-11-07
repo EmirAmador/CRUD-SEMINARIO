@@ -1,0 +1,53 @@
+
+
+<% include partials/_header %>
+
+<div style="background-color:rgb(247, 247, 55);"> </div>
+      <h1 style="text-align: center;">UNIVERSIDAD CATOLICA DE HONDURAS</h1>
+      <h3 style="text-align: center;">Nuestra Señora Reina de la Paz</h3>
+
+<div class="container mt-5">
+  <div class="row">
+    <h1 style="text-align: center;">ACTUALIZAR ALUMNO</h1>
+    
+    <div class="col-md-5 offset-md-3 ">
+      <div class="card-body">
+  
+        <form action="/update/<%= data.id %>" method="POST">
+          <div style="margin-left: 12%;" class="form-group">
+            <input type="text" name="alumno" value="<%= data.alumno%>" placeholder="Nombre de Alumno" class="form-control" autofocus>
+          </div>
+          
+          
+          <div style="margin-left: 12%;" class="form-group">
+            <input type="text" name="correo" value="<%= data.correo%>" placeholder="Correo" class="form-control">
+          </div>
+          
+          
+          <div style="margin-left: 12%;" class="form-group">
+            <input type="number" name="edad" value="<%= data.edad%>" placeholder="Edad" class="form-control">
+          </div>
+          
+          
+          <div style="margin-left: 12%;" class="form-group">
+            <select name="carrera" class="form-control" id="carrera">
+              <option selected disabled>Carreras</option>
+              <% for (var i = 0; i < carreras.length; i++) { -%>
+                <option value="<%= carreras[i].id %>">
+                  <%= carreras[i].carrera %>
+                </option>
+              <% } -%>
+            </select>
+          </div>
+
+          <button style="background-color: green; margin-left: 12%;" type="submit" class="btn btn-primary">
+            Actualizar
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<% include partials/_footer %>

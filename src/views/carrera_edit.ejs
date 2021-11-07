@@ -1,0 +1,33 @@
+
+
+<% include partials/_headercarrera %>
+
+
+<h1 style="text-align: center;">UNIVERSIDAD CATOLICA DE HONDURAS</h1>
+<h3 style="text-align: center;">Nuestra Señora Reina de la Paz</h3>
+
+<div class="container mt-5">
+  <div class="row">
+    <h1 style="text-align: center;">ACTUALIZAR CARRERA</h1>
+  
+    <div class="col-md-5 offset-md-3">
+     
+        
+        <form action="/carreras/updatem/<%= data.id %>" method="POST">
+          <div style="margin-left: 12%;" class="form-group">
+            <input type="text" name="carrera" value="<%= data.carrera%>" placeholder="Carrera" class="form-control" autofocus>
+          </div>
+          <div style="margin-left: 12%;" class="form-group">
+            <input type="text" name="numclases" value="<%= data.numclases%>" placeholder="Numero de Clases" class="form-control">
+          </div>
+
+          <button style="background-color: green; margin-left: 12%;" type="submit" class="btn btn-primary">
+            Actualizar
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+<% include partials/_footercarrera %>
